@@ -13,35 +13,35 @@ This organization hosts the core libraries that power the VertexNova engine and 
 
 Core modules (names may evolve as the project grows):
 
-| Repository | Description | Status |
-|------------|-------------|--------|
-| **[vnecommon](https://github.com/vertexnova/vnecommon)** | Shared types, macros, core definitions | ✅ Available |
-| **[vnelogging](https://github.com/vertexnova/vnelogging)** | Logging framework and sinks | ✅ Available |
-| **[vnemath](https://github.com/vertexnova/vnemath)** | Math types and operations (vectors, matrices, transforms) | 🚧 In Progress |
-| **[vnecmake](https://github.com/vertexnova/vnecmake)** | Shared CMake modules | ✅ Available |
-| **vneutils** | Utility helpers (files, strings, timing, etc.) | 📋 Planned |
-| **vnecrosswindow** | Cross-platform windowing and input abstraction | 📋 Planned |
-| **vnecrossgl** | Cross-graphics API abstraction (OpenGL / Vulkan / Metal) | 📋 Planned |
+| Repository | Description | Status | Visibility |
+|------------|-------------|--------|------------|
+| **[vnecommon](https://github.com/vertexnova/vnecommon)** | Shared types, macros, core definitions | ✅ Available | Public |
+| **[vnelogging](https://github.com/vertexnova/vnelogging)** | Logging framework and sinks | ✅ Available | Public |
+| **[vnemath](https://github.com/vertexnova/vnemath)** | Math types and operations (vectors, matrices, transforms) | ✅ Available | Public |
+| **[vneio](https://github.com/vertexnova/vneio)** | Mesh, image, and volume I/O | ✅ Available | Public |
+| **[vnecmake](https://github.com/vertexnova/vnecmake)** | Shared CMake modules | ✅ Available | Public |
+| **vneevents** | Event system | ✅ Available | Public |
+| **vneutils** | Utility helpers (files, strings, timing, etc.) | ✅ Available | Public |
+| **vneresource** | Resource loading and management | ✅ Available | Public |
+| **vnegraphics** | Cross-gl (xgl), cross-window (xwin), cross-viz (xviz); ECS-based rendering (mesh, volume, slice, etc.) | — | Private |
 
 ## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                     Application                          │
+│                  vnegraphics (Private)                   │
+│         xgl │ xwin │ xviz (ECS: mesh, volume, slice)     │
 ├─────────────────────────────────────────────────────────┤
-│   vnecrossgl (Rendering)  │  vnecrosswindow (Platform)  │
-├───────────────────────────┴─────────────────────────────┤
-│              vnemath  │  vneutils  │  vnelogging        │
+│         vnemath  │  vneutils  │  vnelogging  │  vneio    │
 ├─────────────────────────────────────────────────────────┤
-│                      vnecommon                           │
+│              vnecommon  │  vneevents  │  vneresource      │
 └─────────────────────────────────────────────────────────┘
 ```
 
 **Dependency Flow:**
 - `vnecommon` → used by all libraries
-- `vnemath` + `vneutils` → foundation layer
-- `vnecrosswindow` → platform I/O abstraction
-- `vnecrossgl` → rendering backend abstraction
+- `vnemath` + `vneutils` + `vnelogging` + `vneio` → foundation and I/O
+- `vnegraphics` (private) → xgl (rendering), xwin (windowing), xviz (ECS-based visualization)
 
 ## Goals
 
