@@ -9,22 +9,6 @@
 VertexNova is a modular, cross-platform C++ graphics and visualization stack designed for learning, clarity, and long-term maintainability.  
 This organization hosts the core libraries that power the VertexNova engine and related tooling.
 
-## Repositories
-
-Core modules (names may evolve as the project grows):
-
-| Repository | Description | Status | Visibility |
-|------------|-------------|--------|------------|
-| **[vnecommon](https://github.com/vertexnova/vnecommon)** | Shared types, macros, core definitions | ✅ Available | Public |
-| **[vnelogging](https://github.com/vertexnova/vnelogging)** | Logging framework and sinks | ✅ Available | Public |
-| **[vnemath](https://github.com/vertexnova/vnemath)** | Math types and operations (vectors, matrices, transforms) | ✅ Available | Public |
-| **[vneio](https://github.com/vertexnova/vneio)** | Mesh, image, and volume I/O | ✅ Available | Public |
-| **[vnecmake](https://github.com/vertexnova/vnecmake)** | Shared CMake modules | ✅ Available | Public |
-| **vneevents** | Event system | ✅ Available | Public |
-| **vneutils** | Utility helpers (files, strings, timing, etc.) | ✅ Available | Public |
-| **vneresource** | Resource loading and management | ✅ Available | Public |
-| **vnegraphics** | Cross-gl (xgl), cross-window (xwin), cross-viz (xviz); ECS-based rendering (mesh, volume, slice, etc.) | — | Private |
-
 ## Architecture
 
 ```
