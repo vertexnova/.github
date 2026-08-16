@@ -1,4 +1,10 @@
-# VertexNova
+<p align="center">
+  <img src="icons/vertexnova_logo_medallion_with_text.svg" alt="VertexNova" width="320"/>
+</p>
+
+<p align="center">
+  <strong>A modular C++20 game and graphics engine, layered from the operating system and GPU drivers to the application.</strong>
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/C%2B%2B-20-blue.svg" alt="C++ Standard"/>
@@ -6,37 +12,46 @@
   <img src="https://img.shields.io/badge/license-Apache%202.0-green.svg" alt="License"/>
 </p>
 
-VertexNova is a modular, cross-platform C++ graphics and visualization stack designed for learning, clarity, and long-term maintainability.  
-This organization hosts the core libraries that power the VertexNova engine and related tooling.
+VertexNova is a cross-platform engine built as independent libraries: one concern per repository, a shared CMake convention, and a single render-hardware interface over Vulkan, Metal, and WebGPU.
+
+This organization hosts those libraries. Public modules are meant to be cloned, read, and built. The renderer and RHI stay private while their APIs stabilize.
 
 ## Architecture
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                  vnegraphics (Private)                   │
-│         xgl │ xwin │ xviz (ECS: mesh, volume, slice)     │
-├─────────────────────────────────────────────────────────┤
-│         vnemath  │  vneutils  │  vnelogging  │  vneio    │
-├─────────────────────────────────────────────────────────┤
-│              vnecommon  │  vneevents  │  vneresource      │
-└─────────────────────────────────────────────────────────┘
-```
+<p align="center">
+  <img src="diagrams/architecture.svg" alt="VertexNova game engine architecture: stacked layers from operating system and GPU drivers to the application" width="100%"/>
+</p>
 
-**Dependency Flow:**
-- `vnecommon` → used by all libraries
-- `vnemath` + `vneutils` + `vnelogging` + `vneio` → foundation and I/O
-- `vnegraphics` (private) → xgl (rendering), xwin (windowing), xviz (ECS-based visualization)
+<p align="center">
+  <em> Orange is private (<code>vnerhi</code>, <code>vnegfx</code>). Dotted is future work (<code>vnerobot</code>, <code>vneai</code>, <code>vnexr</code>).</em>
+</p>
 
-## Goals
+Editable source: [architecture.drawio](diagrams/architecture.drawio).
 
-- **Modular design**: each library can be built and tested independently
-- **Cross-platform support**: Windows, macOS, Linux, iOS, Android, and Web (as applicable)
-- **Multi-backend rendering**: consistent API across multiple graphics backends
-- **Developer friendly**: clean architecture, readable code, strong CI and testing
+## Explore the public stack
 
-## Getting Started
+`vnerhi` (RHI) and `vnegfx` (renderer) are private. The modules around them are public and follow the same C++20 / CMake layout.
 
-Most repositories follow a similar build pattern:
+| Layer | Repository | Role |
+|-------|------------|------|
+| Visualization | [vnescene](https://github.com/vertexnova/vnescene) | Cameras, lights, and GPU-friendly scene state |
+| Visualization | [vneinteraction](https://github.com/vertexnova/vneinteraction) | Camera manipulators and input-to-motion controllers |
+| Visualization | [vneio](https://github.com/vertexnova/vneio) | Mesh, image, volume, and DICOM I/O |
+| Visualization | [vneshaderc](https://github.com/vertexnova/vneshaderc) | Offline GLSL to SPIR-V / MSL / WGSL / HLSL |
+| Platform | [vnewindow](https://github.com/vertexnova/vnewindow) | Native windows (Win32, Cocoa, X11, Wayland, UIKit, Android, Web) |
+| Platform | [vneevents](https://github.com/vertexnova/vneevents) | Keyboard, mouse, touch, and window events |
+| Core | [vnemath](https://github.com/vertexnova/vnemath) | Vectors, matrices, geometry, graphics clip-space helpers |
+| Core | [vnelogging](https://github.com/vertexnova/vnelogging) | Synchronous and asynchronous logging |
+| Core | [vneutils](https://github.com/vertexnova/vneutils) | CLI parsing and shared helpers |
+| Core | [vnecommon](https://github.com/vertexnova/vnecommon) | Platform detection, macros, non-copyable bases |
+
+## Why it is structured this way
+
+- **One library per concern** — scene, I/O, windowing, math, and logging can be learned and tested on their own.
+- **GPU backends behind an RHI** — application code does not talk to Vulkan, Metal, or WebGPU directly.
+- **Independent CI** — each repository configures, builds, and tests with the same CMake pattern.
+
+## Build a public library
 
 ```bash
 git clone --recursive https://github.com/vertexnova/<repo>.git
@@ -46,11 +61,11 @@ cmake --build build -j
 ctest --test-dir build
 ```
 
-See each repository's README for module-specific requirements, examples, and integration notes.
+See each repository README for module-specific options, samples, and integration notes.
 
 ## Status
 
-VertexNova is under active development. APIs and repository boundaries may change as the architecture stabilizes.
+VertexNova is under active development. The public modules above are the stable entry points. `vnerobot`, `vneai`, and `vnexr` are planned and not part of the current public surface.
 
 ## Contributing
 
