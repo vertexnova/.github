@@ -28,6 +28,25 @@ This organization hosts those libraries. Public modules are meant to be cloned, 
 
 Editable source: [architecture.drawio](diagrams/architecture.drawio).
 
+## Showcase
+
+Silent 1080p reel of `vnegfx` samples on iOS (Metal) plus desktop stills: volume, slice, CSG, OIT, mesh picking.
+
+<p align="center">
+  <a href="showcase/vertexnova-showcase.mp4">Watch vertexnova-showcase.mp4</a> (44s)
+</p>
+
+<p align="center">
+  <img src="showcase/stills/01-volume-isosurface.png" alt="Volume isosurface" width="32%"/>
+  <img src="showcase/stills/02-volume-dvr.png" alt="Volume DVR" width="32%"/>
+  <img src="showcase/stills/03-volume-slicer.png" alt="Volume slicer" width="32%"/>
+</p>
+<p align="center">
+  <img src="showcase/stills/04-csg-dragon.png" alt="Mixed CSG" width="32%"/>
+  <img src="showcase/stills/05-oit-engine.png" alt="A-buffer OIT" width="32%"/>
+  <img src="showcase/stills/06-mesh-picking.png" alt="Mesh picking" width="32%"/>
+</p>
+
 ## Explore the public stack
 
 `vnerhi` (RHI) and `vnegfx` (renderer) are private. The modules around them are public and follow the same C++20 / CMake layout.
