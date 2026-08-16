@@ -12,6 +12,12 @@
   <img src="https://img.shields.io/badge/license-Apache%202.0-green.svg" alt="License"/>
 </p>
 
+<p align="center">
+  <a href="https://learnvertexnova.com">Website</a>
+  ·
+  <a href="https://vertexnova.github.io">vnerhi WebGPU samples</a>
+</p>
+
 VertexNova is a cross-platform engine built as independent libraries: one concern per repository, a shared CMake convention, and a single render-hardware interface over Vulkan, Metal, and WebGPU.
 
 This organization hosts those libraries. Public modules are meant to be cloned, read, and built. The renderer and RHI stay private while their APIs stabilize.
@@ -30,7 +36,8 @@ Editable source: [architecture.drawio](diagrams/architecture.drawio).
 
 ## Showcase
 
-Silent 1080p reel of `vnegfx` samples on iOS (Metal) plus desktop stills: volume, slice, CSG, OIT, mesh picking.
+Silent 1080p reel of `vnegfx` samples on iOS (Metal) plus desktop stills: volume, slice, CSG, OIT, mesh picking.  
+Run the `vnerhi` WebGPU demos in the browser at [vertexnova.github.io](https://vertexnova.github.io). Docs and site: [learnvertexnova.com](https://learnvertexnova.com).
 
 <p align="center">
   <a href="showcase/vertexnova-showcase.mp4">Watch vertexnova-showcase.mp4</a> (44s)
