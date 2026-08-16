@@ -40,13 +40,13 @@ Silent 1080p reel of `vnegfx` samples on iOS (Metal) and desktop.
 </p>
 
 <p align="center">
-  <img src="showcase/stills/02-volume-dvr.png" alt="Volume DVR" width="32%"/>
-  <img src="showcase/stills/03-volume-slicer.png" alt="Volume slicer" width="32%"/>
-  <img src="showcase/stills/05-oit-engine.png" alt="A-buffer OIT" width="32%"/>
+  <img src="https://raw.githubusercontent.com/vertexnova/.github/main/profile/showcase/stills/02-volume-dvr.png" alt="Volume DVR" width="280"/>
+  <img src="https://raw.githubusercontent.com/vertexnova/.github/main/profile/showcase/stills/03-volume-slicer.png" alt="Volume slicer" width="280"/>
+  <img src="https://raw.githubusercontent.com/vertexnova/.github/main/profile/showcase/stills/05-oit-engine.png" alt="A-buffer OIT" width="280"/>
 </p>
 <p align="center">
-  <img src="showcase/stills/09-points.png" alt="Point sprites" width="32%"/>
-  <img src="showcase/stills/11-text.png" alt="MSDF text" width="32%"/>
+  <img src="https://raw.githubusercontent.com/vertexnova/.github/main/profile/showcase/stills/09-points.png" alt="Point sprites" width="280"/>
+  <img src="https://raw.githubusercontent.com/vertexnova/.github/main/profile/showcase/stills/11-text.png" alt="MSDF text" width="280"/>
 </p>
 
 ## Explore the public stack
