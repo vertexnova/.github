@@ -58,7 +58,7 @@ Silent 1080p reel of `vnegfx` samples on iOS (Metal) and desktop.
 | Visualization | [vnescene](https://github.com/vertexnova/vnescene) | Cameras, lights, and GPU-friendly scene state |
 | Visualization | [vneinteraction](https://github.com/vertexnova/vneinteraction) | Camera manipulators and controllers |
 | Visualization | [vneio](https://github.com/vertexnova/vneio) | Mesh, image, volume, font and video |
-| Visualization | [vneshaderc](https://github.com/vertexnova/vneshaderc) | Offline GLSL to SPIR-V / MSL / WGSL / HLSL |
+| Visualization | [vneshaderc](https://github.com/vertexnova/vneshaderc) | Offline GLSL to SPIR-V / MSL / WGSL |
 | Platform | [vnewindow](https://github.com/vertexnova/vnewindow) | Native windows (Win32, Cocoa, X11, Wayland, UIKit, Android, Web) |
 | Platform | [vneevents](https://github.com/vertexnova/vneevents) | Keyboard, mouse, touch, and window events |
 | Core | [vnemath](https://github.com/vertexnova/vnemath) | Vectors, matrices, geometry, graphics clip-space helpers |
