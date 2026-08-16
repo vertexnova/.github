@@ -18,9 +18,7 @@
   <a href="https://vertexnova.github.io">vnerhi WebGPU samples</a>
 </p>
 
-VertexNova is a cross-platform engine built as independent libraries: one concern per repository, a shared CMake convention, and a single render-hardware interface over Vulkan, Metal, and WebGPU.
-
-This organization hosts those libraries. Public modules are meant to be cloned, read, and built. The renderer and RHI stay private while their APIs stabilize.
+Public libraries sit around a private RHI and renderer.
 
 ## Architecture
 
@@ -29,27 +27,26 @@ This organization hosts those libraries. Public modules are meant to be cloned, 
 </p>
 
 <p align="center">
-  <em> Orange is private (<code>vnerhi</code>, <code>vnegfx</code>). Dotted is future work (<code>vnerobot</code>, <code>vneai</code>, <code>vnexr</code>).</em>
+  <em> Orange is private (<code>vnerhi</code>, <code>vnegfx</code>). Dotted is future work (<code>vneanim</code>, <code>vneai</code>, <code>vnexr</code>).</em>
 </p>
 
 ## Showcase
 
-Silent 1080p reel of `vnegfx` samples on iOS (Metal) plus desktop stills: volume, slice, CSG, OIT, mesh picking.  
-Run the `vnerhi` WebGPU demos in the browser at [vertexnova.github.io](https://vertexnova.github.io). Docs and site: [learnvertexnova.com](https://learnvertexnova.com).
+Silent 1080p reel of `vnegfx` samples on iOS (Metal) and desktop.  
+[vnerhi WebGPU samples](https://vertexnova.github.io). Phase 0 results: [CrossGL demos](https://learnvertexnova.com/docs/docs/demos/crossgl-demos/). Site: [learnvertexnova.com](https://learnvertexnova.com).
 
 <p align="center">
   <a href="showcase/vertexnova-showcase.mp4">Watch vertexnova-showcase.mp4</a> (44s)
 </p>
 
 <p align="center">
-  <img src="showcase/stills/01-volume-isosurface.png" alt="Volume isosurface" width="32%"/>
   <img src="showcase/stills/02-volume-dvr.png" alt="Volume DVR" width="32%"/>
   <img src="showcase/stills/03-volume-slicer.png" alt="Volume slicer" width="32%"/>
+  <img src="showcase/stills/05-oit-engine.png" alt="A-buffer OIT" width="32%"/>
 </p>
 <p align="center">
-  <img src="showcase/stills/04-csg-dragon.png" alt="Mixed CSG" width="32%"/>
-  <img src="showcase/stills/05-oit-engine.png" alt="A-buffer OIT" width="32%"/>
-  <img src="showcase/stills/06-mesh-picking.png" alt="Mesh picking" width="32%"/>
+  <img src="showcase/stills/09-points.png" alt="Point sprites" width="32%"/>
+  <img src="showcase/stills/11-text.png" alt="MSDF text" width="32%"/>
 </p>
 
 ## Explore the public stack
@@ -59,8 +56,8 @@ Run the `vnerhi` WebGPU demos in the browser at [vertexnova.github.io](https://v
 | Layer | Repository | Role |
 |-------|------------|------|
 | Visualization | [vnescene](https://github.com/vertexnova/vnescene) | Cameras, lights, and GPU-friendly scene state |
-| Visualization | [vneinteraction](https://github.com/vertexnova/vneinteraction) | Camera manipulators and input-to-motion controllers |
-| Visualization | [vneio](https://github.com/vertexnova/vneio) | Mesh, image, volume, and DICOM I/O |
+| Visualization | [vneinteraction](https://github.com/vertexnova/vneinteraction) | Camera manipulators and controllers |
+| Visualization | [vneio](https://github.com/vertexnova/vneio) | Mesh, image, volume, font and video |
 | Visualization | [vneshaderc](https://github.com/vertexnova/vneshaderc) | Offline GLSL to SPIR-V / MSL / WGSL / HLSL |
 | Platform | [vnewindow](https://github.com/vertexnova/vnewindow) | Native windows (Win32, Cocoa, X11, Wayland, UIKit, Android, Web) |
 | Platform | [vneevents](https://github.com/vertexnova/vneevents) | Keyboard, mouse, touch, and window events |
@@ -71,7 +68,7 @@ Run the `vnerhi` WebGPU demos in the browser at [vertexnova.github.io](https://v
 
 ## Why it is structured this way
 
-- **One library per concern** — scene, I/O, windowing, math, and logging can be learned and tested on their own.
+- **Single-purpose libraries** — scene, I/O, windowing, math, and logging can be learned and tested on their own.
 - **GPU backends behind an RHI** — application code does not talk to Vulkan, Metal, or WebGPU directly.
 - **Independent CI** — each repository configures, builds, and tests with the same CMake pattern.
 
@@ -89,7 +86,7 @@ See each repository README for module-specific options, samples, and integration
 
 ## Status
 
-VertexNova is under active development. The public modules above are the stable entry points. `vnerobot`, `vneai`, and `vnexr` are planned and not part of the current public surface.
+VertexNova is an educational and experimental project with a long-term goal. Testing meets a high standard. The stack is POC-ready, not production-ready.
 
 ## Contributing
 

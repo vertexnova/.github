@@ -25,4 +25,6 @@ Requires `ffmpeg` and Python Pillow.
 # scale each still to 1920x1080, 2.5–3s, fade, concat → vertexnova-showcase.mp4
 ```
 
+Stills in this folder are web-sized PNGs (max 960px) for the org profile. Rebuild the film from the original simulator / sample screenshots, not from these files.
+
 Keep UI chrome in the iOS shots. It shows Metal, iOS, and the sample controls (isovalue, CSG subtract, OIT, picking).
