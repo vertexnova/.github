@@ -32,8 +32,6 @@ This organization hosts those libraries. Public modules are meant to be cloned, 
   <em> Orange is private (<code>vnerhi</code>, <code>vnegfx</code>). Dotted is future work (<code>vnerobot</code>, <code>vneai</code>, <code>vnexr</code>).</em>
 </p>
 
-Editable source: [architecture.drawio](diagrams/architecture.drawio).
-
 ## Showcase
 
 Silent 1080p reel of `vnegfx` samples on iOS (Metal) plus desktop stills: volume, slice, CSG, OIT, mesh picking.  
