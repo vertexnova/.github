@@ -84,6 +84,14 @@ ctest --test-dir build
 
 See each repository README for module-specific options, samples, and integration notes.
 
+## Design documents
+
+Platform and component requirements (code-first, with test/sample evidence):
+
+**[vnedd — VertexNova Engine Design Documents](https://github.com/vertexnova/vnedd)**
+
+Two tiers: [high-level system requirements](https://github.com/vertexnova/vnedd/tree/main/docs/vertexnova/design/high-level) and [per-library component specs](https://github.com/vertexnova/vnedd/tree/main/docs/vertexnova/design/components).
+
 ## Status
 
 VertexNova is an educational and experimental project with a long-term goal. Testing meets a high standard. The stack is POC-ready, not production-ready.
